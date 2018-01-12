@@ -1,0 +1,52 @@
+
+<style>
+.withborder{
+	background-color:red;
+}
+
+.noborder{
+	border:1px solid white;
+}
+
+.liclass{
+	border:2px solid black;
+	width:175px;
+	height:100px;
+	margin:15px;
+}
+
+.closeclass{
+	float:right;
+	width:10px;
+	height:10px;
+}
+</style>
+
+<div ng-controller="View1Ctrl">
+<p>This is the partial for view 1.</p>
+<div>
+<!-- {{sauces}} 
+ -->
+
+<ul>
+  <li id="encrypted{{ sauce.id }}" class="liclass" ng-repeat="sauce in sauces">
+  <div >
+  <img class="closeclass" src="close.png" ng-click="clickclosebtn(sauce.id)">
+  	   <span ng-class="bordercolorchange(sauce.id) === true ? 'withborder' : 'noborder'"> {{ sauce.title }}
+	    	<a href="#!/view2"  >
+	   		 	<img  src='{{ sauce.imageURL }}' ng-click="send(sauce.imageURL, sauce.id)"  style="background-repeat: no-repeat; max-width: 70px;max-height: 70px">
+	    	</a>
+    	</span>
+  </div>
+ 
+  </li>
+</ul>
+
+message:  {{rootScope.message}}
+
+</div>
+
+ 
+
+
+ 
